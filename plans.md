@@ -68,7 +68,7 @@
         -- Links to the corresponding Route (see https://blog.devgenius.io/how-to-create-a-navbar-using-react-router-51b78bc6ce51 for a Router Version 6 example)
 
 - Home component:
-    -- Renders a div containing:
+    -- DONE Renders a div containing:
         -- A div with the text content 'Welcome to my {props.websiteType} website!'
         -- An img with the src props.imageSrc
 
