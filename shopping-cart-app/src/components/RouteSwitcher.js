@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import shoppingImageSrc from "../images/shopping.jpg";
+import Shop from "./Shop";
 
-function RouteSwitcher() {
+function RouteSwitcher({availableItemNames}) {
     return (
         <div className="RouteSwitcher">
             <BrowserRouter>
@@ -11,6 +12,11 @@ function RouteSwitcher() {
                         <Home
                             websiteType="shopping"
                             imageSrc={shoppingImageSrc}
+                        />
+                    } />
+                    <Route path="/shop" element={
+                        <Shop
+                            availableItemNames={availableItemNames}
                         />
                     } />
                 </Routes>
