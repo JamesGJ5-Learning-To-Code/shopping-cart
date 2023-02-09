@@ -79,15 +79,15 @@
         -- Add TODO for considering putting the ItemCard components above into some sort of component to group them in
 
 - CartTracker component:
-    -- Renders a div containing:
+    -- DONE Renders a div containing:
         -- DONE A CartSizeDisplay component
-        -- A CheckoutButton component
+        -- DONE A CheckoutButton component
 
 - CartSizeDisplay component:
-    -- Renders a div with text content '{} items in cart!'
+    -- DONE Renders a div with text content '{} items in cart!'
 
 - CheckoutButton component:
-    -- Renders a button with text content 'Pay'
+    -- DONE Renders a button with text content 'Pay'
 
 - ItemCard component:
     -- Renders a div containing:
