@@ -46,20 +46,21 @@
 
 - RouteSwitcher component:
     -- Imports Home and Shop
-    -- Contains the following array: [Home, Shop]
 
     -- Renders the following in between BrowserRouter component tags:
 
         -- A NavigationBar component, passing to it the following props:
-            -- displayName of each of components linked to (Home and Shop)
+            -- path strings array, ['home', 'shop']
 
         -- In between Routes component tags:
-            -- A Route for the Home component (put Home into this line via the same array element passing Home in props to NavigationBar), passing to it the following props:
+            -- A Route for the Home component, passing to it the following props:
                 -- websiteType (which in this case will be 'shopping')
                 -- The imageSrc for an image (in this case, an image related to shopping)
 
-            -- A Route for the Shop component (put Shop into this line via the same array element passing Home in props to NavigationBar), passing to it the following props:
+            -- A Route for the Shop component, passing to it the following props:
                 -- props.availableItemNames
+
+    -- Add TODO re: passing to navigationBar and the Routes similar information, adn so passing from same object literal to avoid, essentially, repeating code
 
 - NavigationBar component:
     -- Renders a ul element containing, for each displayName in its props:
