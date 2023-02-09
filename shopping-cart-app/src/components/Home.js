@@ -1,3 +1,5 @@
+import "../styles/Home.css";
+
 function Home({websiteType, imageSrc}) {
     return (
         <div className="Home">
