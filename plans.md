@@ -53,7 +53,7 @@
             -- path strings array, ['home', 'shop']
 
         -- In between Routes component tags:
-            -- A Route for the Home component, passing to it the following props:
+            -- DONE A Route for the Home component, passing to it the following props:
                 -- websiteType (which in this case will be 'shopping')
                 -- The imageSrc for an image (in this case, an image related to shopping)
 
