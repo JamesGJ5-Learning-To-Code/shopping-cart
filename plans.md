@@ -37,7 +37,12 @@
 # Plan of static version of app
 
 - App component:
-    -- Renders a RouteSwitcher component
+    -- Renders a ShoppingCartSite component, passing to it the following props:
+        -- An availableItemNames array (containing strings with item names)
+
+- ShoppingCartSite component:
+    -- Renders a RouteSwitcher component, passing to it the following props:
+        -- props.availableItemNames
 
 - RouteSwitcher component:
     -- Imports Home and Shop
@@ -54,7 +59,7 @@
                 -- The imageSrc for an image (in this case, an image related to shopping)
 
             -- A Route for the Shop component (put Shop into this line via the same array element passing Home in props to NavigationBar), passing to it the following props:
-                -- An availableItemNames array (containing strings with item names)
+                -- props.availableItemNames
 
 - NavigationBar component:
     -- Renders a ul element containing, for each displayName in its props:
