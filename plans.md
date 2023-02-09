@@ -37,7 +37,7 @@
 # Plan of static version of app
 
 - App component:
-    -- Renders a ShoppingCartSite component, passing to it the following props:
+    -- DONE Renders a ShoppingCartSite component, passing to it the following props:
         -- An availableItemNames array (containing strings with item names)
 
 - ShoppingCartSite component:
