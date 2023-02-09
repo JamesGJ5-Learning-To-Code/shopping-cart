@@ -1,11 +1,11 @@
 import RouteSwitcher from "./RouteSwitcher";
 
-function ShoppingCartSite(props) {
+function ShoppingCartSite({availableItemNames}) {
     return (
         <div className="ShoppingCartSite">
             <RouteSwitcher
                 availableItemNames={
-                    props.availableItemNames
+                    availableItemNames
                 }
             />
         </div>
