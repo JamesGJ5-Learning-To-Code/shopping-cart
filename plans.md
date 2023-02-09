@@ -41,7 +41,7 @@
         -- An availableItemNames array (containing strings with item names)
 
 - ShoppingCartSite component:
-    -- Renders a RouteSwitcher component, passing to it the following props:
+    -- DONE Renders a RouteSwitcher component, passing to it the following props:
         -- props.availableItemNames
 
 - RouteSwitcher component:
