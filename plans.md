@@ -28,7 +28,7 @@
     iii) A title for each product
     iv) An "Add To Card" button
 
-8. Total cost on the cart should adjust when something is added to the cart
+8. Number of items in the cart should adjust when something is added to the cart
 
 9. Test app thoroughly:
     - Via React Testing Library
