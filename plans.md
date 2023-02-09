@@ -45,9 +45,9 @@
         -- props.availableItemNames
 
 - RouteSwitcher component:
-    -- Imports Home and Shop
+    -- DONE Imports Home and Shop
 
-    -- Renders the following in between BrowserRouter component tags:
+    -- DONE Renders the following in between BrowserRouter component tags:
 
         -- A NavigationBar component, passing to it the following props:
             -- path strings array, ['home', 'shop']
@@ -60,10 +60,10 @@
             -- DONE A Route for the Shop component, passing to it the following props:
                 -- props.availableItemNames
 
-    -- Add TODO re: passing to navigationBar and the Routes similar information, adn so passing from same object literal to avoid, essentially, repeating code
+    -- DONE Add TODO re: passing to navigationBar and the Routes similar information, adn so passing from same object literal to avoid, essentially, repeating code
 
 - NavigationBar component:
-    -- Renders a ul element containing, for each displayName in its props:
+    -- DONE Renders a ul element containing, for each displayName in its props:
         -- A li element with this displayName as text content
         -- Links to the corresponding Route (see https://blog.devgenius.io/how-to-create-a-navbar-using-react-router-51b78bc6ce51 for a Router Version 6 example)
 
