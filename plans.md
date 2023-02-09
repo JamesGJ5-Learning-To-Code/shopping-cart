@@ -75,8 +75,8 @@
 - Shop component:
     -- Renders a div containing:
         -- DONE A CartTracker component
-        -- An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
-        -- Add TODO for considering putting the ItemCard components above into some sort of component to group them in
+        -- DONE An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
+        -- DONE Add TODO for considering putting the ItemCard components above into some sort of component to group them in
 
 - CartTracker component:
     -- DONE Renders a div containing:

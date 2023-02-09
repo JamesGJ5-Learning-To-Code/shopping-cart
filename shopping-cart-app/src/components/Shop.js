@@ -5,6 +5,8 @@ function Shop({availableItemNames}) {
     return (
         <div className="Shop">
             <CartTracker />
+            {/* TODO: consider putting the below into a grouping component, for 
+            styling etc. */}
             {availableItemNames.map((itemName, index) => {
                 return (
                     <ItemCard
