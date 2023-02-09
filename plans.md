@@ -57,7 +57,7 @@
                 -- websiteType (which in this case will be 'shopping')
                 -- The imageSrc for an image (in this case, an image related to shopping)
 
-            -- A Route for the Shop component, passing to it the following props:
+            -- DONE A Route for the Shop component, passing to it the following props:
                 -- props.availableItemNames
 
     -- Add TODO re: passing to navigationBar and the Routes similar information, adn so passing from same object literal to avoid, essentially, repeating code
