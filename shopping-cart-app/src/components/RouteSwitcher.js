@@ -5,6 +5,8 @@ import shoppingImageSrc from "../images/shopping.jpg";
 import Shop from "./Shop";
 
 function RouteSwitcher({availableItemNames}) {
+    // TODO: use a common array/object literal to load similar information into both 
+    // the routes below and the NavigationBar, in order to achieve DRY
     return (
         <div className="RouteSwitcher">
             <BrowserRouter>
