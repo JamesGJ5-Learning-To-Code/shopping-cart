@@ -1,7 +1,10 @@
+// import QuantityInput from "./QuantityInput";
+
 function ItemCard({itemName}) {
     return (
-        <div>
+        <div className="quantityInput">
             {itemName}
+            {/* <QuantityInput/> */}
         </div>
     );
 }
