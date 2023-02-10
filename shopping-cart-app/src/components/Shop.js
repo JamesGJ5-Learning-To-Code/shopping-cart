@@ -7,9 +7,15 @@ function Shop({availableItems}) {
         item => item.initialQuantityChosen
     );
     const [allQuantitiesChosen, setAllQuantitiesChosen] = useState(allInitialQuantitiesChosen);
+    const getArraySum = (arr) => {
+        return arr.reduce((cumulativeSum, cur) => cumulativeSum + cur, 0)
+    }
+    const cartSize = getArraySum(allInitialQuantitiesChosen);
     return (
         <div className="Shop">
-            <CartTracker />
+            <CartTracker
+                cartSize={getArraySum(allQuantitiesChosen)}
+            />
             <ItemList
                 availableItems={availableItems}
             />

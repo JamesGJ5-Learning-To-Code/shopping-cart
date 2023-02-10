@@ -1,8 +1,8 @@
-function CartSizeDisplay() {
+function CartSizeDisplay({cartSize}) {
     return (
         // TODO: control below text in curly brackets via state later
         <div className="CartSizeDisplay">
-            There are {} items in the cart!
+            There are {cartSize} items in the cart!
         </div>
     );
 }

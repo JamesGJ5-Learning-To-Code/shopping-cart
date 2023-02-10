@@ -1,10 +1,12 @@
 import CartSizeDisplay from "./CartSizeDisplay";
 import CheckoutButton from "./CheckoutButton";
 
-function CartTracker() {
+function CartTracker({cartSize}) {
     return (
         <div className="CartTracker">
-            <CartSizeDisplay />
+            <CartSizeDisplay
+                cartSize={cartSize}
+            />
             <CheckoutButton />
         </div>
     )
