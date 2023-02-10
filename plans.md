@@ -123,3 +123,31 @@ States:
                 - Changing value of input in QuantityInput
             Common "ancestor" component of affected and affecter:
                 - QuantityInput
+
+Step-by-step plan:
+
+1. From App, pass, via props, an initialCartSize of 0 to Shop
+2. Initialize state of cartSize (as initialCartSize) and setCartSize in Shop, with the assistance of useState
+
+3. Pass cartSize down to CartSizeDisplay via props
+4. Render cartSize in CartSizeDisplay's text content
+
+5. Change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
+6. Make the rest of the src directory consistent with the aforementioned new format
+
+7. To each object literal in availableItemNames, add a key-value pair for initialQuantityChosen
+
+8. Pass each item's object literal from ItemList to each ItemCard via props
+9. Pass an item's object literal's initialQuantityChosen from the ItemCard down to the QuantityInput via props
+
+10. Initialize state of quantityChosen (as initialQuantityChosen) and setQuantityChosen in QuantityInput, with the assistance of useState
+
+11. Set the input's value to quantityChosen
+
+12. Give the input setQuantityChosen as its onChange callback
+
+13. Pass setCartSize from Shop down to QuantityInput via props
+
+14. Write an effect in QuantityInput in which, upon updates to QuantityChosen, setCartSize(prevCartSize => prevCartSize - prevQuantityChosen + quantityChosen is performed). See https://blog.logrocket.com/accessing-previous-props-state-react-hooks/ for how to get prevQuantityChosen
+
+15. Enable error to be thrown in ShoppingCart if sum of initialQuantityChosen for each item doesn't equal initialCartSize
