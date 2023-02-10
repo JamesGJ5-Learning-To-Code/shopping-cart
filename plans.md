@@ -75,7 +75,7 @@
 - Shop component:
     -- Renders a div containing:
         -- DONE A CartTracker component
-        -- An ItemList component, passing to it props.availableItemNames
+        -- DONE An ItemList component, passing to it props.availableItemNames
 
 - CartTracker component:
     -- DONE Renders a div containing:
@@ -90,7 +90,7 @@
 
 - ItemList component:
     -- Renders, in a div:
-        -- An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
+        -- DONE An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
 
 
 - ItemCard component:
