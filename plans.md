@@ -91,7 +91,7 @@
 
 - ItemCard component:
     -- Renders a div containing:
-        -- Text content of '{props.itemName}'
+        -- DONE Text content of '{props.itemName}'
         -- Rendered QuantityInput component
         -- Rendered QuantityIncrementer component
         -- Render QuantityDecrementer component
