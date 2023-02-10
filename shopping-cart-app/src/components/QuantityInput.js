@@ -4,6 +4,11 @@ function QuantityInput() {
     const inputID = uniqid();
     return (
         <div className="QuantityInput">
+            <label
+                htmlFor={inputID}
+            >
+                Quantity:{' '}
+            </label>
             <input
                 id={inputID}
                 type="number"
