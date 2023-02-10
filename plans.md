@@ -128,12 +128,12 @@ Step-by-step plan:
 7. DONE Pass cartSize down to CartSizeDisplay via props
 8. DONE Render cartSize in CartSizeDisplay's text content
 
-9. In Shop, map availableItems to an array of availableItemNames and pass it to ItemList via props
+9. DONE In Shop, map availableItems to an array of availableItemNames and pass it to ItemList via props
 
 10. Pass allQuantitiesChosen from Shop to ItemList via props
 11. Pass setAllQuantitiesChosen from Shop to QuantityInput via props
 
-12. Pass each item's name in availableItemNames from ItemList to each ItemCard via props
+12. DONE Pass each item's name in availableItemNames from ItemList to each ItemCard via props
 13. Pass an item's corresponding quantityChosen in allQuantitiesChosen from the ItemList down to the QuantityInput via props
 
 14. In QuantityInput, set the input's value to quantityChosen
