@@ -139,3 +139,168 @@ Step-by-step plan:
 14. DONE In QuantityInput, set the input's value to quantityChosen
 
 15. DONE Think about error handling regarding an initialQuantityChosen passed into ShoppingCartSite being negative or non-integer, for example
+
+# Plan of test suites
+
+Going to take a bottom-up approach to testing (I.E. starting with the deepest components) so that I can warm-up without needing extra features to write a test suite such as mocking child components.
+
+First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX_v4pA0MaWB-CaaBLToOJ5PyI/edit to decide what, in each component, must be tested. The exact details of how this will be done will not be planned fully yet--will do that just before writing each test suite.
+
+1. Home:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of a Home component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by Home
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:
+            - Make assertions about said side-effects (the rendering)
+
+2. QuantityInput:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of a QuantityInput component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by QuantityInput
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:
+            - Make assertions about said side-effects (the rendering)
+
+    - Outgoing command messages:
+        - Specific:
+            - Input's onChange event, as it should call the handleChange method, which may or may not call a method, forQuantityChosenChange, that mutates data (allQuantitiesChosen in Shop) outside of QuantityInput (don't worry about testing the re-rendering of QuantityInput as a result
+        - Method of testing:
+            - Assert whether or not the message gets sent, probably using mocking
+
+3. ItemCard:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an ItemCard component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by ItemCard
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+            - Will have to mock child QuantityInput component
+
+4. ItemList:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an ItemList component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by ItemList
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+            - Will have to mock child ItemCard components
+
+5. CartSizeDisplay:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an CartSizeDisplay component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by CartSizeDisplay
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+
+6. CheckoutButton:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an CheckoutButton component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by CheckoutButton
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+
+7. CartTracker:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an CartTracker component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by CartTracker
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+            - Will have to mock child CartSizeDisplay component
+            - Will have to mock child CheckoutButton component
+
+8. Shop:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specifics:
+
+            - Specific:
+                - Essentially, the creation of an Shop component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by Shop
+                - Make sure specific input props lead to the correct output (child) props
+                - N.B.: not entirely sure if this fits the above definition but I think it works for now
+            - Method of testing:         
+                - Make assertions about said side-effects (the rendering)
+                - Will have to mock child CartTracker component
+                - Will have to mock child ItemList component
+
+            - Specific:
+                - Another incoming command message is a call to modifyQuantityChosen (from, for example, a deeper-down QuantityInput component); this should have the effect of changing the state allQuantitiesChosen, which is in the highest level of the same Shop component (so this is a direct side-effect) and allQuantitiesChosen is passed down to child components, meaning it can be thought of as public
+            - Method of testing:
+                - Make assertions about said side-effects (allQuantitiesChosen)
+
+
+9. NavigationBar:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specific:
+            - Essentially, the creation of an NavigationBar component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by NavigationBar
+            - Make sure specific input props lead to the correct output (child) props
+            - N.B.: not entirely sure if this fits the above definition but I think it works for now
+        - Method of testing:         
+            - Make assertions about said side-effects (the rendering)
+
+    - Outgoing command messages:
+        - Specific:
+            - Whatever outgoing command clicking on a Link results in
+        - Method of testing:
+            - Assert whether or not the message gets sent, probably using mocking
+
+10. RouteSwitcher:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specifics:
+
+            - Specific:
+                - Essentially, the creation of a RouteSwitcher component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by RouteSwitcher
+                - Make sure specific input props lead to the correct output (child) props
+                - N.B.: not entirely sure if this fits the above definition but I think it works for now
+            - Method of testing:         
+                - Make assertions about said side-effects (the rendering)
+                - May or may not have to mock BrowserRouter, Routes and Route components
+                - May have to mock child Home component
+                - May have to mock child Home component
+                - May have to mock child Shop component
+
+            - Specific:
+                - Another incoming command message is to switch between Routes (command from NavigationBar), which would have the result of rendering one Route as opposed to another (a direct, public side effect)
+            - Method of testing:
+                - Make assertions about said side-effects (one Route being rendered as opposed to another when whatever event callback etc. comes back from the NavigationBar)
+
+11. ShoppingCart:
+
+    - Incoming command messages effects with direct, public side-effects:
+        - Specifics:
+
+            - Specific:
+                - Essentially, the creation of a ShoppingCart component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by ShoppingCart
+                - Make sure specific input props lead to the correct output (child) props
+                - N.B.: not entirely sure if this fits the above definition but I think it works for now
+            - Method of testing:         
+                - Make assertions about said side-effects (the rendering)
+                - Will have to mock child RouteSwitcher component
+
+            - Specific:
+                - If the ShoppingCart is supplied availableItems in which any initialChosenQuantity is non-integer or below 0, an error should be thrown
+            - Method of testing:
+                - Make assertions about said side-effects (ensure an error is thrown with the correct message)
+
+12. App:
+
+    - I don't think this needs to be tested
