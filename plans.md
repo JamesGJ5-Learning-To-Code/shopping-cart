@@ -145,3 +145,5 @@ Step-by-step plan:
 17. Give the input modifyQuantityChosenInState as its onChange callback
 
 18. Pass setCartSize from Shop down to QuantityInput via props
+
+19. Think about error handling regarding an initialQuantityChosen passed into ShoppingCartSite being negative or non-integer, for example
