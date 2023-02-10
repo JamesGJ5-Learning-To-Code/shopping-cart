@@ -10,7 +10,6 @@ function Shop({availableItems}) {
     const getArraySum = (arr) => {
         return arr.reduce((cumulativeSum, cur) => cumulativeSum + cur, 0)
     }
-    const cartSize = getArraySum(allInitialQuantitiesChosen);
     return (
         <div className="Shop">
             <CartTracker
