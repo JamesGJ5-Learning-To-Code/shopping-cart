@@ -121,8 +121,8 @@ Step-by-step plan:
 
 3. DONE In App, to each object literal in availableItems, add a key-value pair for initialQuantityChosen
 
-4. In Shop, map initialQuantityChosen from each item object in availableItems to its corresponding index in a new array allInitialQuantitiesChosen
-5. In Shop, initialize state of allQuantitiesChosen (as allInitialQuantitiesChosen) and setAllQuantitiesChosen, with the assistance of useState
+4. DONE In Shop, map initialQuantityChosen from each item object in availableItems to its corresponding index in a new array allInitialQuantitiesChosen
+5. DONE In Shop, initialize state of allQuantitiesChosen (as allInitialQuantitiesChosen) and setAllQuantitiesChosen, with the assistance of useState
 
 6. In Shop, get sum of allQuantitiesChosen (call it cartSize) via the array's reduce method
 7. Pass cartSize down to CartSizeDisplay via props
