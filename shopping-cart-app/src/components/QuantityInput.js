@@ -1,7 +1,14 @@
 import uniqid from "uniqid";
 
-function QuantityInput({quantityChosen}) {
+function QuantityInput({quantityChosen, indexOfQuantityChosen, forQuantityChosenChange}) {
     const inputID = uniqid();
+    const handleChange = (event) => {
+        const newValue = event.target.value;
+        if (newValue !== '') {
+            const newQuantityChosen = parseInt(newValue);
+            forQuantityChosenChange(indexOfQuantityChosen, newQuantityChosen);
+        };
+    };
     return (
         <div className="QuantityInput">
             <label
@@ -14,6 +21,7 @@ function QuantityInput({quantityChosen}) {
                 type="number"
                 min="0"
                 value={quantityChosen}
+                onChange={handleChange}
             />
         </div>
     );

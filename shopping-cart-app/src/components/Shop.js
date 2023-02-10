@@ -13,6 +13,14 @@ function Shop({availableItems}) {
     const availableItemNames = availableItems.map(
         item => item.name
     );
+    const getDeepCopy = (copiedObject) => {
+        return JSON.parse(JSON.stringify(copiedObject));
+    }
+    const modifyQuantityChosen = (index, newValue) => {
+        const newAllQuantitiesChosen = getDeepCopy(allQuantitiesChosen);
+        newAllQuantitiesChosen[index] = newValue;
+        setAllQuantitiesChosen(newAllQuantitiesChosen);
+    };
     return (
         <div className="Shop">
             <CartTracker
@@ -21,6 +29,7 @@ function Shop({availableItems}) {
             <ItemList
                 availableItemNames={availableItemNames}
                 allQuantitiesChosen={allQuantitiesChosen}
+                forQuantityChosenChange={modifyQuantityChosen}
             />
         </div>
     );

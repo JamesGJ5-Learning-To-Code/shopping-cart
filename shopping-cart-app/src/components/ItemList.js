@@ -1,6 +1,6 @@
 import ItemCard from "./ItemCard";
 
-function ItemList({availableItemNames, allQuantitiesChosen}) {
+function ItemList({availableItemNames, allQuantitiesChosen, forQuantityChosenChange}) {
     return (
         <div className="ItemList">
             {availableItemNames.map((itemName, index) => {
@@ -10,6 +10,8 @@ function ItemList({availableItemNames, allQuantitiesChosen}) {
                         key={index}
                         itemName={itemName}
                         quantityChosen={quantityChosen}
+                        indexOfQuantityChosen={index}
+                        forQuantityChosenChange={forQuantityChosenChange}
                     />
                 );
             })}
