@@ -75,8 +75,7 @@
 - Shop component:
     -- Renders a div containing:
         -- DONE A CartTracker component
-        -- DONE An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
-        -- DONE Add TODO for considering putting the ItemCard components above into some sort of component to group them in
+        -- An ItemList component, passing to it props.availableItemNames
 
 - CartTracker component:
     -- DONE Renders a div containing:
@@ -88,6 +87,11 @@
 
 - CheckoutButton component:
     -- DONE Renders a button with text content 'Pay'
+
+- ItemList component:
+    -- Renders, in a div:
+        -- An ItemCard component for each element in props.availableItemNames, supplying the corresponding name (itemName) to the ItemCard in props
+
 
 - ItemCard component:
     -- Renders a div containing:
