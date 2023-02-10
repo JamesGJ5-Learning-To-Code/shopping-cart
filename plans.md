@@ -107,47 +107,41 @@
 
 States:
 
-    - cartSize (number of items in cart in total):
+    - allQuantitiesChosen:
         Affects:
-            - Text content of CartSizeDisplay (cartSize should be included in text content)
+            - Text content of CartSizeDisplay (the sum of allQuantitiesChosen should be included in the text content)
+            - Value of corresponding input in QuantityInput (this input is linked to via the index in allQuantitiesChosen being the key of the QuantityInput's parent ItemCard)
         Affected by:
-            - quantityChosen for each ItemCard (they sum together to make cartSize)
-        Common "ancestor" component of affected and affecter:
-            - Shop
-
-    - In each ItemCard:
-        -- quantityChosen:
-            Affects:
-                - Value of input in QuantityInput
-            Affected by:
-                - Changing value of input in QuantityInput
-            Common "ancestor" component of affected and affecter:
-                - QuantityInput
+            - Changing value of input in QuantityInput (should deep-copy allQuantitiesChosen, change the element at the correct index of the deep copy, then update allQuantitiesChosen using setAllQuantitiesChosen)
 
 Step-by-step plan:
 
-1. From App, pass, via props, an initialCartSize of 0 to Shop
-2. Initialize state of cartSize (as initialCartSize) and setCartSize in Shop, with the assistance of useState
+1. In App, change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
+2. Make the rest of the src directory consistent with the aforementioned new format
 
-3. Pass cartSize down to CartSizeDisplay via props
-4. Render cartSize in CartSizeDisplay's text content
+3. In App, to each object literal in availableItems, add a key-value pair for initialQuantityChosen
 
-5. Change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
-6. Make the rest of the src directory consistent with the aforementioned new format
+4. In Shop, map initialQuantityChosen from each item object in availableItems to its corresponding index in a new array allInitialQuantitiesChosen
+5. In Shop, initialize state of allQuantitiesChosen (as allInitialQuantitiesChosen) and setAllQuantitiesChosen, with the assistance of useState
 
-7. To each object literal in availableItemNames, add a key-value pair for initialQuantityChosen
+6. In Shop, get sum of allQuantitiesChosen (call it cartSize) via the array's reduce method
+7. Pass cartSize down to CartSizeDisplay via props
+8. Render cartSize in CartSizeDisplay's text content
 
-8. Pass each item's object literal from ItemList to each ItemCard via props
-9. Pass an item's object literal's initialQuantityChosen from the ItemCard down to the QuantityInput via props
+9. In Shop, map availableItems to an array of availableItemNames and pass it to ItemList via props
 
-10. Initialize state of quantityChosen (as initialQuantityChosen) and setQuantityChosen in QuantityInput, with the assistance of useState
+10. Pass allQuantitiesChosen from Shop to ItemList via props
+11. Pass setAllQuantitiesChosen from Shop to QuantityInput via props
 
-11. Set the input's value to quantityChosen
+12. Pass each item's name in availableItemNames from ItemList to each ItemCard via props
+13. Pass an item's corresponding quantityChosen in allQuantitiesChosen from the ItemList down to the QuantityInput via props
 
-12. Give the input setQuantityChosen as its onChange callback
+14. In QuantityInput, set the input's value to quantityChosen
 
-13. Pass setCartSize from Shop down to QuantityInput via props
+15. In ItemCard, pass key down to QuantityInput in a prop called allQuantitiesChosenIndex
 
-14. Write an effect in QuantityInput in which, upon updates to QuantityChosen, setCartSize(prevCartSize => prevCartSize - prevQuantityChosen + quantityChosen is performed). See https://blog.logrocket.com/accessing-previous-props-state-react-hooks/ for how to get prevQuantityChosen
+16. In QuantityInput, write a method modifyQuantityChosenInState that uses setAllQuantitiesChosen and takes the current state and copies it and modifies the value at the index yielded by allQuantitiesChosenIndex to the new value of the target of the event passed to this method
 
-15. Enable error to be thrown in ShoppingCart if sum of initialQuantityChosen for each item doesn't equal initialCartSize
+17. Give the input modifyQuantityChosenInState as its onChange callback
+
+18. Pass setCartSize from Shop down to QuantityInput via props
