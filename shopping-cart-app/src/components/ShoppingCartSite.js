@@ -1,11 +1,11 @@
 import RouteSwitcher from "./RouteSwitcher";
 
-function ShoppingCartSite({availableItemNames}) {
+function ShoppingCartSite({availableItems}) {
     return (
         <div className="ShoppingCartSite">
             <RouteSwitcher
-                availableItemNames={
-                    availableItemNames
+                availableItems={
+                    availableItems
                 }
             />
         </div>

@@ -116,8 +116,8 @@ States:
 
 Step-by-step plan:
 
-1. In App, change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
-2. Make the rest of the src directory consistent with the aforementioned new format
+1. DONE In App, change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
+2. DONE Make the rest of the src directory consistent with the aforementioned new format
 
 3. In App, to each object literal in availableItems, add a key-value pair for initialQuantityChosen
 

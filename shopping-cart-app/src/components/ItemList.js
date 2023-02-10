@@ -1,9 +1,10 @@
 import ItemCard from "./ItemCard";
 
-function ItemList({availableItemNames}) {
+function ItemList({availableItems}) {
     return (
         <div className="ItemList">
-            {availableItemNames.map((itemName, index) => {
+            {availableItems.map((item, index) => {
+                const itemName = item.name;
                 return (
                     <ItemCard
                         key={index}

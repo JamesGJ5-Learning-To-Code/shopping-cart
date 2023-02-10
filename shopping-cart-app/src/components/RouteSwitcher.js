@@ -4,7 +4,7 @@ import Home from "./Home";
 import shoppingImageSrc from "../images/shopping.jpg";
 import Shop from "./Shop";
 
-function RouteSwitcher({availableItemNames}) {
+function RouteSwitcher({availableItems}) {
     // TODO: consider using a common array/object literal to load similar information into both 
     // the routes below and the NavigationBar, in order to achieve DRY
     return (
@@ -33,7 +33,7 @@ function RouteSwitcher({availableItemNames}) {
                     } />
                     <Route path="/shop" element={
                         <Shop
-                            availableItemNames={availableItemNames}
+                            availableItems={availableItems}
                         />
                     } />
                 </Routes>

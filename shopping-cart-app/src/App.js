@@ -4,11 +4,24 @@ function App() {
   return (
     <div className="App">
       <ShoppingCartSite
-        availableItemNames={
+        // availableItemNames={
+        //   [
+        //     "Hoover",
+        //     "Duster",
+        //     "Sponge"
+        //   ]
+        // }
+        availableItems={
           [
-            "Hoover",
-            "Duster",
-            "Sponge"
+            {
+              name: "Hoover"
+            },
+            {
+              name: "Duster"
+            },
+            {
+              name: "Sponge"
+            }
           ]
         }
       />

@@ -1,12 +1,12 @@
 import CartTracker from "./CartTracker";
 import ItemList from "./ItemList";
 
-function Shop({availableItemNames}) {
+function Shop({availableItems}) {
     return (
         <div className="Shop">
             <CartTracker />
             <ItemList
-                availableItemNames={availableItemNames}
+                availableItems={availableItems}
             />
         </div>
     );
