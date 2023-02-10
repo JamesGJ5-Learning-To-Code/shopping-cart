@@ -119,7 +119,7 @@ Step-by-step plan:
 1. DONE In App, change availableItemNames to availableItems, which will be an array containing, for each item, an object literal featuring a key-value pair for the item's name (a string)
 2. DONE Make the rest of the src directory consistent with the aforementioned new format
 
-3. In App, to each object literal in availableItems, add a key-value pair for initialQuantityChosen
+3. DONE In App, to each object literal in availableItems, add a key-value pair for initialQuantityChosen
 
 4. In Shop, map initialQuantityChosen from each item object in availableItems to its corresponding index in a new array allInitialQuantitiesChosen
 5. In Shop, initialize state of allQuantitiesChosen (as allInitialQuantitiesChosen) and setAllQuantitiesChosen, with the assistance of useState

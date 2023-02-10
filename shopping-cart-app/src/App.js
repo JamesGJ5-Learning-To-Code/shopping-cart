@@ -4,23 +4,19 @@ function App() {
   return (
     <div className="App">
       <ShoppingCartSite
-        // availableItemNames={
-        //   [
-        //     "Hoover",
-        //     "Duster",
-        //     "Sponge"
-        //   ]
-        // }
         availableItems={
           [
             {
-              name: "Hoover"
+              name: "Hoover",
+              initialQuantityChosen: 0
             },
             {
-              name: "Duster"
+              name: "Duster",
+              initialQuantityChosen: 0
             },
             {
-              name: "Sponge"
+              name: "Sponge",
+              initialQuantityChosen: 0
             }
           ]
         }
