@@ -20,6 +20,7 @@ function Shop({availableItems}) {
             />
             <ItemList
                 availableItemNames={availableItemNames}
+                allQuantitiesChosen={allQuantitiesChosen}
             />
         </div>
     );

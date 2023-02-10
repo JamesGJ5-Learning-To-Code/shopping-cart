@@ -1,10 +1,12 @@
 import QuantityInput from "./QuantityInput";
 
-function ItemCard({itemName}) {
+function ItemCard({itemName, quantityChosen}) {
     return (
         <div className="quantityInput">
             {itemName}
-            <QuantityInput/>
+            <QuantityInput
+                quantityChosen={quantityChosen}
+            />
         </div>
     );
 }

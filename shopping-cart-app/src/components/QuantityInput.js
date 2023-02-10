@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 
-function QuantityInput() {
+function QuantityInput({quantityChosen}) {
     const inputID = uniqid();
     return (
         <div className="QuantityInput">
@@ -13,6 +13,7 @@ function QuantityInput() {
                 id={inputID}
                 type="number"
                 min="0"
+                value={quantityChosen}
             />
         </div>
     );
