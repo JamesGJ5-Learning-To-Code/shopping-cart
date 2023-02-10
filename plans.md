@@ -138,7 +138,7 @@ Step-by-step plan:
 
 14. In QuantityInput, set the input's value to quantityChosen
 
-15. In ItemCard, pass key down to QuantityInput in a prop called allQuantitiesChosenIndex
+15. From ItemList, pass indexOfQuantityChosen (index of a certain ItemCard's quantityChosen in allQuantitiesChosen) down to QuantityInput in a prop called allQuantitiesChosenIndex
 
 16. In QuantityInput, write a method modifyQuantityChosenInState that uses setAllQuantitiesChosen and takes the current state and copies it and modifies the value at the index yielded by allQuantitiesChosenIndex to the new value of the target of the event passed to this method
 
