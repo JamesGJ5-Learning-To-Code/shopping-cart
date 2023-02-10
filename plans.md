@@ -34,7 +34,7 @@
     - Via React Testing Library
     - Don't directly test react-router-dom
 
-# Plan of static version of app
+# DONE Plan of static version of app
 
 - App component:
     -- DONE Renders a ShoppingCartSite component, passing to it the following props:
@@ -138,4 +138,4 @@ Step-by-step plan:
 
 14. DONE In QuantityInput, set the input's value to quantityChosen
 
-15. Think about error handling regarding an initialQuantityChosen passed into ShoppingCartSite being negative or non-integer, for example
+15. DONE Think about error handling regarding an initialQuantityChosen passed into ShoppingCartSite being negative or non-integer, for example
