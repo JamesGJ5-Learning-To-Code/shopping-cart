@@ -26,3 +26,29 @@
 //                  (indexOfQuantityChosen and "9") passed to it
 //                  - Simulate an input onChange event to a value of "" and assert that the 
 //                  forQuantityChosenChange is not called
+
+import { getByLabelText, render, screen } from "@testing-library/react";
+import QuantityInput from "../QuantityInput";
+
+const testUniqueID = "asdasdasd93812739123";
+jest.mock("uniqid", () => () => testUniqueID);
+
+const testQuantityChosen = 4;
+const testIndexOfQuantityChosen = 5;
+const testForQuantityChosenChange = jest.fn();
+
+describe("QuantityInput component", () => {
+    describe("rendering", () => {
+        it("renders label with correct htmlFor and text content", () => {
+            render(
+                <QuantityInput
+                    quantityChosen={testQuantityChosen}
+                    indexOfQuantityChosen={testIndexOfQuantityChosen}
+                    forQuantityChosenChange={testForQuantityChosenChange}
+                />
+            );
+
+            expect(screen.getByText("Quantity:").htmlFor).toBe(testUniqueID);
+        });
+    });
+});
