@@ -296,3 +296,5 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 12. App:
 
     - I don't think this needs to be tested
+
+TODO: consider implementing snapshot testing

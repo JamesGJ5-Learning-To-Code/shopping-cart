@@ -28,7 +28,6 @@ import testImageSrc from "./testImage.jpg";
 
 const testWebsiteType = "cooking";
 
-// TODO: consider implementing snapshot testing
 describe("Home component", () => {
     describe("rendering", () => {
         it("renders the correct welcome message", () => {
