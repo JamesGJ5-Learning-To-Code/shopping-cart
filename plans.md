@@ -148,21 +148,7 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 
 1. DONE Home:
 
-2. QuantityInput:
-
-    - Incoming command messages effects with direct, public side-effects:
-        - Specific:
-            - Essentially, the creation of a QuantityInput component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by QuantityInput
-            - Make sure specific input props lead to the correct output (child) props
-            - N.B.: not entirely sure if this fits the above definition but I think it works for now
-        - Method of testing:
-            - Make assertions about said side-effects (the rendering)
-
-    - Outgoing command messages:
-        - Specific:
-            - Input's onChange event, as it should call the handleChange method, which may or may not call a method, forQuantityChosenChange, that mutates data (allQuantitiesChosen in Shop) outside of QuantityInput (don't worry about testing the re-rendering of QuantityInput as a result
-        - Method of testing:
-            - Assert whether or not the message gets sent, probably using mocking
+2. DONE QuantityInput:
 
 3. ItemCard:
 
