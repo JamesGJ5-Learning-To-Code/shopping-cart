@@ -37,7 +37,7 @@ describe("Home component", () => {
                 imageSrc={testImageSrc}
             />
         );
-        it("renders the correct welcome", () => {
+        it("renders the correct welcome message", () => {
             expect(
                 screen.getByText(`Welcome to my ${testWebsiteType} website!`)
             ).toBeInTheDocument();
