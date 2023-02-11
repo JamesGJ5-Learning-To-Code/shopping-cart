@@ -188,15 +188,7 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 
 5. DONE CartSizeDisplay:
 
-6. CheckoutButton:
-
-    - Incoming command messages effects with direct, public side-effects:
-        - Specific:
-            - Essentially, the creation of an CheckoutButton component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by CheckoutButton
-            - Make sure specific input props lead to the correct output (child) props
-            - N.B.: not entirely sure if this fits the above definition but I think it works for now
-        - Method of testing:         
-            - Make assertions about said side-effects (the rendering)
+6. DONE CheckoutButton:
 
 7. CartTracker:
 
