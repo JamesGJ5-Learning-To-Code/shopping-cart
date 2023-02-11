@@ -31,16 +31,30 @@ const testWebsiteType = "cooking";
 // TODO: consider implementing snapshot testing
 describe("Home component", () => {
     describe("rendering", () => {
-        render(
-            <Home
-                websiteType={testWebsiteType}
-                imageSrc={testImageSrc}
-            />
-        );
         it("renders the correct welcome message", () => {
+            render(
+                <Home
+                    websiteType={testWebsiteType}
+                    imageSrc={testImageSrc}
+                />
+            );
+
             expect(
                 screen.getByText(`Welcome to my ${testWebsiteType} website!`)
             ).toBeInTheDocument();
+        });
+        it("renders the correct image", () => {
+            render(
+                <Home
+                    websiteType={testWebsiteType}
+                    imageSrc={testImageSrc}
+                />
+            );
+
+            expect(
+                // Remember, alt should be src until this alt is replaced in Home.js
+                screen.getByAltText(testImageSrc).src
+            ).toMatch(testImageSrc);
         });
     });
 });
