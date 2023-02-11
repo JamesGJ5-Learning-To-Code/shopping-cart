@@ -36,29 +36,26 @@ jest.mock("uniqid", () => () => testUniqueID);
 
 const testQuantityChosen = 4;
 const testIndexOfQuantityChosen = 5;
-// TODO: may have to put this in individual unit tests
 const testForQuantityChosenChange = jest.fn();
+
+const testQuantityInput = <QuantityInput
+    quantityChosen={testQuantityChosen}
+    indexOfQuantityChosen={testIndexOfQuantityChosen}
+    forQuantityChosenChange={testForQuantityChosenChange}
+/>
 
 describe("QuantityInput component", () => {
     describe("rendering", () => {
         it("renders label with correct htmlFor and text content", () => {
             render(
-                <QuantityInput
-                    quantityChosen={testQuantityChosen}
-                    indexOfQuantityChosen={testIndexOfQuantityChosen}
-                    forQuantityChosenChange={testForQuantityChosenChange}
-                />
+                testQuantityInput
             );
 
             expect(screen.getByText("Quantity:").htmlFor).toBe(testUniqueID);
         });
         it("renders input with correct ID, type, min and value", () => {
             render(
-                <QuantityInput
-                    quantityChosen={testQuantityChosen}
-                    indexOfQuantityChosen={testIndexOfQuantityChosen}
-                    forQuantityChosenChange={testForQuantityChosenChange}
-                />
+                testQuantityInput
             );
             
             const input = screen.getByDisplayValue(testQuantityChosen.toString());
@@ -68,14 +65,9 @@ describe("QuantityInput component", () => {
         });
     });
     describe("input onChange calling forQuantityChosenChange appropriately", () => {
-        // The below function is recommended by https://testing-library.com/docs/user-event/intro/
         it("appending '9' to the input value correctly calling forQuantityChosenChange once", () => {
             render(
-                <QuantityInput
-                    quantityChosen={testQuantityChosen}
-                    indexOfQuantityChosen={testIndexOfQuantityChosen}
-                    forQuantityChosenChange={testForQuantityChosenChange}
-                />
+                testQuantityInput
             );
             const input = screen.getByDisplayValue(testQuantityChosen.toString());
             const typedDigits = "9";
@@ -90,11 +82,7 @@ describe("QuantityInput component", () => {
         });
         it("clearing the input value doesn't call forQuantityChosenChange", () => {
             render(
-                <QuantityInput
-                    quantityChosen={testQuantityChosen}
-                    indexOfQuantityChosen={testIndexOfQuantityChosen}
-                    forQuantityChosenChange={testForQuantityChosenChange}
-                />
+                testQuantityInput
             );
             const input = screen.getByDisplayValue(testQuantityChosen.toString());
             userEvent.clear(input);
