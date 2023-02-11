@@ -50,5 +50,19 @@ describe("QuantityInput component", () => {
 
             expect(screen.getByText("Quantity:").htmlFor).toBe(testUniqueID);
         });
+        it("renders input with correct ID, type, min and value", () => {
+            render(
+                <QuantityInput
+                    quantityChosen={testQuantityChosen}
+                    indexOfQuantityChosen={testIndexOfQuantityChosen}
+                    forQuantityChosenChange={testForQuantityChosenChange}
+                />
+            );
+            
+            const input = screen.getByDisplayValue(testQuantityChosen.toString());
+            expect(input.id).toBe(testUniqueID);
+            expect(input.type).toBe("number");
+            expect(input.min).toBe("0");
+        });
     });
 });
