@@ -282,3 +282,4 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
     - I don't think this needs to be tested
 
 TODO: consider implementing snapshot testing
+<!-- Try to do your best to modify component code so that getByRole can be used more frequently in tests, since this will indicate good accessibility -->
