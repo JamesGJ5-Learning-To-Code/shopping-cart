@@ -146,15 +146,7 @@ Going to take a bottom-up approach to testing (I.E. starting with the deepest co
 
 First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX_v4pA0MaWB-CaaBLToOJ5PyI/edit to decide what, in each component, must be tested. The exact details of how this will be done will not be planned fully yet--will do that just before writing each test suite.
 
-1. Home:
-
-    - Incoming command messages effects with direct, public side-effects:
-        - Specific:
-            - Essentially, the creation of a Home component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by Home
-            - Make sure specific input props lead to the correct output (child) props
-            - N.B.: not entirely sure if this fits the above definition but I think it works for now
-        - Method of testing:
-            - Make assertions about said side-effects (the rendering)
+1. DONE Home:
 
 2. QuantityInput:
 
