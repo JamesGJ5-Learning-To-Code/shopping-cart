@@ -88,5 +88,18 @@ describe("QuantityInput component", () => {
                 parseInt(expectedNewValue)
             );
         });
+        it("clearing the input value doesn't call forQuantityChosenChange", () => {
+            render(
+                <QuantityInput
+                    quantityChosen={testQuantityChosen}
+                    indexOfQuantityChosen={testIndexOfQuantityChosen}
+                    forQuantityChosenChange={testForQuantityChosenChange}
+                />
+            );
+            const input = screen.getByDisplayValue(testQuantityChosen.toString());
+            userEvent.clear(input);
+
+            expect(testForQuantityChosenChange).toHaveBeenCalledTimes(0);
+        });
     });
 });
