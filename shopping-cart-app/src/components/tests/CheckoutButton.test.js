@@ -14,3 +14,20 @@
 //              - Try to render a CheckoutButton component
 //              - Expect:
 //                  - A button is rendered with explanatory text content ("Pay")
+
+import { render, screen } from "@testing-library/react";
+import CheckoutButton from "../CheckoutButton";
+
+describe("CheckoutButton component", () => {
+    describe("rendering", () => {
+        it("renders a button with 'pay' as text content", () => {
+            render(
+                <CheckoutButton/>
+            );
+
+            expect(
+                screen.getByRole('button', {name: /Pay/i})
+            ).toBeInTheDocument();
+        });
+    });
+});
