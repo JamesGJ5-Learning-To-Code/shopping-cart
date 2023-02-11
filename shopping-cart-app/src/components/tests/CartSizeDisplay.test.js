@@ -13,3 +13,24 @@
 //              - Expect:
 //                  - getByText("There are 8 [get "8" via same const cartSize used 
 //                    for rendering] items in the cart!") toBeInTheDocument
+
+import {render, screen} from "@testing-library/react";
+import CartSizeDisplay from "../CartSizeDisplay";
+
+const testCartSize = 8;
+
+describe("CartSizeDisplay component", () => {
+    describe("rendering", () => {
+        it("renders the correct text", () => {
+            render(
+                <CartSizeDisplay
+                    cartSize={testCartSize}
+                />  
+            );
+
+            expect(
+                screen.getByText(`There are ${testCartSize} items in the cart!`)
+            ).toBeInTheDocument();
+        });
+    });
+});
