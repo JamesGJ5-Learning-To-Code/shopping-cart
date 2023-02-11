@@ -30,16 +30,17 @@ const testWebsiteType = "cooking";
 
 // TODO: consider implementing snapshot testing
 describe("Home component", () => {
-    it("renders the correct welcome text", () => {
+    describe("rendering", () => {
         render(
             <Home
                 websiteType={testWebsiteType}
                 imageSrc={testImageSrc}
             />
         );
-
-        expect(
-            screen.getByText(`Welcome to my ${testWebsiteType} website!`)
-        ).toBeInTheDocument();
+        it("renders the correct welcome", () => {
+            expect(
+                screen.getByText(`Welcome to my ${testWebsiteType} website!`)
+            ).toBeInTheDocument();
+        });
     });
 });
