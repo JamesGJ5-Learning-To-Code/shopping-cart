@@ -14,10 +14,32 @@
 //              - Try to render a Home component with particular props passed to it (say, a 
 //                website type of "cooking" and a src for an empty test jpg in tests/)
 //              - Expect:
-//                  - getByText("Welcome to my cooking [get "coocking" via same const used 
-//                    for rendering] website!").tagName.toBe('div')
+//                  - getByText("Welcome to my cooking [get "cooking" via same const used 
+//                    for rendering] website!") toBeInTheDocument
 //                  - Note: the above also ensures that said text content is present, as if 
 //                    it isn't, getBy will not match anything and will thus throw an error
 //                  - getByRole(img).src.toBe(src of image used)
 //                  - getByRole(img).alt.toBe(src of image used)
 //                  - May need to use getAtrribute to get some of the above properties
+
+import { render, screen } from "@testing-library/react";
+import Home from "../Home";
+import testImageSrc from "./testImage.jpg";
+
+const testWebsiteType = "cooking";
+
+// TODO: consider implementing snapshot testing
+describe("Home component", () => {
+    it("renders the correct welcome text", () => {
+        render(
+            <Home
+                websiteType={testWebsiteType}
+                imageSrc={testImageSrc}
+            />
+        );
+
+        expect(
+            screen.getByText(`Welcome to my ${testWebsiteType} website!`)
+        ).toBeInTheDocument();
+    });
+});
