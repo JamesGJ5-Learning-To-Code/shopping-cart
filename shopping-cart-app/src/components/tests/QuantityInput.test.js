@@ -29,12 +29,14 @@
 
 import { getByLabelText, render, screen } from "@testing-library/react";
 import QuantityInput from "../QuantityInput";
+import userEvent from "@testing-library/user-event";
 
 const testUniqueID = "asdasdasd93812739123";
 jest.mock("uniqid", () => () => testUniqueID);
 
 const testQuantityChosen = 4;
 const testIndexOfQuantityChosen = 5;
+// TODO: may have to put this in individual unit tests
 const testForQuantityChosenChange = jest.fn();
 
 describe("QuantityInput component", () => {
@@ -63,6 +65,28 @@ describe("QuantityInput component", () => {
             expect(input.id).toBe(testUniqueID);
             expect(input.type).toBe("number");
             expect(input.min).toBe("0");
+        });
+    });
+    describe("input onChange calling forQuantityChosenChange appropriately", () => {
+        // The below function is recommended by https://testing-library.com/docs/user-event/intro/
+        it("appending '9' to the input value correctly calling forQuantityChosenChange once", () => {
+            render(
+                <QuantityInput
+                    quantityChosen={testQuantityChosen}
+                    indexOfQuantityChosen={testIndexOfQuantityChosen}
+                    forQuantityChosenChange={testForQuantityChosenChange}
+                />
+            );
+            const input = screen.getByDisplayValue(testQuantityChosen.toString());
+            const typedDigits = "9";
+            userEvent.type(input, typedDigits);
+
+            expect(testForQuantityChosenChange).toHaveBeenCalledTimes(1);
+            const expectedNewValue = `${testQuantityChosen}${typedDigits}`;
+            expect(testForQuantityChosenChange).toHaveBeenCalledWith(
+                testIndexOfQuantityChosen,
+                parseInt(expectedNewValue)
+            );
         });
     });
 });
