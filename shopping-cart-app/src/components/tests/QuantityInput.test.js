@@ -27,7 +27,7 @@
 //                  - Simulate an input onChange event to a value of "" and assert that the 
 //                  forQuantityChosenChange is not called
 
-import { getByLabelText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import QuantityInput from "../QuantityInput";
 import userEvent from "@testing-library/user-event";
 
