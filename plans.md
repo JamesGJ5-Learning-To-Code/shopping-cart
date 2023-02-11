@@ -186,15 +186,7 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
             - Make assertions about said side-effects (the rendering)
             - Will have to mock child ItemCard components
 
-5. CartSizeDisplay:
-
-    - Incoming command messages effects with direct, public side-effects:
-        - Specific:
-            - Essentially, the creation of an CartSizeDisplay component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by CartSizeDisplay
-            - Make sure specific input props lead to the correct output (child) props
-            - N.B.: not entirely sure if this fits the above definition but I think it works for now
-        - Method of testing:         
-            - Make assertions about said side-effects (the rendering)
+5. DONE CartSizeDisplay:
 
 6. CheckoutButton:
 
