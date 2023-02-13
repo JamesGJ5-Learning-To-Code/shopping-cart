@@ -171,24 +171,6 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 
 8. Shop:
 
-    - Incoming command messages effects with direct, public side-effects:
-        - Specifics:
-
-            - Specific:
-                - Essentially, the creation of an Shop component should cause the rendering of what's in its return statement, this rendering being a public side-effect that is directly resulted by Shop
-                - Make sure specific input props lead to the correct output (child) props
-                - N.B.: not entirely sure if this fits the above definition but I think it works for now
-            - Method of testing:         
-                - Make assertions about said side-effects (the rendering)
-                - Will have to mock child CartTracker component
-                - Will have to mock child ItemList component
-
-            - Specific:
-                - Another incoming command message is a call to modifyQuantityChosen (from, for example, a deeper-down QuantityInput component); this should have the effect of changing the state allQuantitiesChosen, which is in the highest level of the same Shop component (so this is a direct side-effect) and allQuantitiesChosen is passed down to child components, meaning it can be thought of as public
-            - Method of testing:
-                - Make assertions about said side-effects (allQuantitiesChosen)
-
-
 9. NavigationBar:
 
     - Incoming command messages effects with direct, public side-effects:
