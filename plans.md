@@ -167,7 +167,7 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 
 6. DONE CheckoutButton:
 
-7. CartTracker:
+7. DONE CartTracker:
 
 8. Shop:
 
