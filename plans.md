@@ -150,7 +150,7 @@ First, I am going to use https://docs.google.com/document/d/1icLdWxKegSnLFl1VmbX
 
 2. DONE QuantityInput:
 
-3. ItemCard:
+3. DONE ItemCard:
 
 4. ItemList:
 
