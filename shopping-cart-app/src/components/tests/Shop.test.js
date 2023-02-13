@@ -36,7 +36,6 @@ jest.mock("../ItemList", () => ({
     availableItemNames, allQuantitiesChosen, forQuantityChosenChange
 }) => (
     <>
-        {forQuantityChosenChange()}
         <div data-testid="ItemList-availableItemNames">{availableItemNames.toString()}</div>
         <div data-testid="ItemList-allQuantitiesChosen">{allQuantitiesChosen.toString()}</div>
     </>
@@ -63,6 +62,16 @@ const testAvailableItemNames = testAvailableItems.map(
 const testAllInitialQuantitiesChosen = testAvailableItems.map(
     item => item.initialQuantityChosen
 );
+const testInitialCartSize = testAllInitialQuantitiesChosen.reduce((cumulativeSum, cur) => cumulativeSum + cur, 0);
 
-const modifyQuantityChosen = jest.fn();
-jest.mock("modifyQuantityChosen", modifyQuantityChosen);
+describe("Shop component", () => {
+    describe("rendering", () => {
+        it("renders CartTracker with correct cartSize", () => {
+            render(testShop);
+
+            expect(screen.getByTestId("CartTracker-cartSize").textContent).toBe(
+                testInitialCartSize.toString()
+            );
+        });
+    });
+});
