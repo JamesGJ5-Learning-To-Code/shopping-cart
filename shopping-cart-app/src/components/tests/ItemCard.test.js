@@ -28,7 +28,7 @@
 import { render, screen } from "@testing-library/react";
 import ItemCard from "../ItemCard";
 
-jest.mock("./QuantityInput", () => ({
+jest.mock("../QuantityInput", () => ({
     quantityChosen, indexOfQuantityChosen, forQuantityChosenChange}) => (
         <>
             {/* TODO: check if it is meant to be data-testid instead */}
@@ -41,4 +41,21 @@ jest.mock("./QuantityInput", () => ({
 const testItemName = "skateboard";
 const testQuantityChosen = 4;
 const testIndexOfQuantityChosen = 2;
-const forQuantityChosenChange = jest.fn();
+const testForQuantityChosenChange = jest.fn();
+
+const testItemCard = <ItemCard
+    itemName={testItemName}
+    quantityChosen={testQuantityChosen}
+    indexOfQuantityChosen={testIndexOfQuantityChosen}
+    forQuantityChosenChange={testForQuantityChosenChange}
+/>;
+
+describe("ItemCard component", () => {
+    describe("rendering", () => {
+        it("renders correct item name in text content", () => {
+            render(testItemCard);
+
+            expect(screen.getByText(testItemName)).toBeInTheDocument();
+        })
+    });
+});
