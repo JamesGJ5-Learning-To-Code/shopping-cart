@@ -90,3 +90,5 @@ describe("Shop component", () => {
         });
     });
 });
+
+// TODO: still must test that state is changed correctly (see plan above)
