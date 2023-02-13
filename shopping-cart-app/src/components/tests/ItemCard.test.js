@@ -41,7 +41,7 @@ jest.mock("../QuantityInput", () => ({
 const testItemName = "skateboard";
 const testQuantityChosen = 4;
 const testIndexOfQuantityChosen = 2;
-const testForQuantityChosenChange = jest.fn(() => "correct function");
+const testForQuantityChosenChange = jest.fn();
 
 const testItemCard = <ItemCard
     itemName={testItemName}
