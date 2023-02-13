@@ -48,5 +48,10 @@ describe("CartTracker component", () => {
 
             expect(screen.getByTestId("cartSize").textContent).toBe(testCartSize.toString());
         });
+        it("renders CheckoutButton correctly", () => {
+            render(testCartTracker);
+
+            expect(screen.getByTestId("checkoutButton")).toBeInTheDocument();
+        });
     });
 });
