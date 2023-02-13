@@ -32,16 +32,16 @@ jest.mock("../QuantityInput", () => ({
     quantityChosen, indexOfQuantityChosen, forQuantityChosenChange}) => (
         <>
             {/* TODO: check if it is meant to be data-testid instead */}
-            <div data-test-id="quantityChosen">{quantityChosen}</div>
-            <div data-test-id="indexOfQuantityChosen">{indexOfQuantityChosen}</div>
-            <div data-test-id="forQuantityChosenChange">{forQuantityChosenChange}</div>
+            <div data-testid="quantityChosen">{quantityChosen}</div>
+            <div data-testid="indexOfQuantityChosen">{indexOfQuantityChosen}</div>
+            {forQuantityChosenChange()}
         </>
 ));
 
 const testItemName = "skateboard";
 const testQuantityChosen = 4;
 const testIndexOfQuantityChosen = 2;
-const testForQuantityChosenChange = jest.fn();
+const testForQuantityChosenChange = jest.fn(() => "correct function");
 
 const testItemCard = <ItemCard
     itemName={testItemName}
@@ -56,6 +56,13 @@ describe("ItemCard component", () => {
             render(testItemCard);
 
             expect(screen.getByText(testItemName)).toBeInTheDocument();
-        })
+        });
+        it("renders QuantityInput with correct props", () => {
+            render(testItemCard);
+
+            expect(screen.getByTestId("quantityChosen").textContent).toBe("4");
+            expect(screen.getByTestId("indexOfQuantityChosen").textContent).toBe("2");
+            expect(testForQuantityChosenChange).toHaveBeenCalledTimes(1);
+        });
     });
 });
