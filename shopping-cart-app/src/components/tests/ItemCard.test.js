@@ -60,8 +60,12 @@ describe("ItemCard component", () => {
         it("renders QuantityInput with correct props", () => {
             render(testItemCard);
 
-            expect(screen.getByTestId("quantityChosen").textContent).toBe("4");
-            expect(screen.getByTestId("indexOfQuantityChosen").textContent).toBe("2");
+            expect(screen.getByTestId("quantityChosen").textContent).toBe(
+                testQuantityChosen.toString()
+            );
+            expect(screen.getByTestId("indexOfQuantityChosen").textContent).toBe(
+                testIndexOfQuantityChosen.toString()
+            );
             expect(testForQuantityChosenChange).toHaveBeenCalledTimes(1);
         });
     });
