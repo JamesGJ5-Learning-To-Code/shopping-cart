@@ -22,3 +22,20 @@
 //                data-testid and getByTestId and ensure its text content is "5"
 //              - Also, make sure a mocked CheckoutButton can be found via its data-testid 
 //                and getByTestId
+
+import { render, screen } from "@testing-library/react";
+import CartTracker from "../CartTracker";
+
+jest.mock("../CartSizeDisplay", () => ({cartSize}) => (
+    <div data-testid="cartSize">{cartSize}</div>
+));
+
+jest.mock("../CheckoutButton", () => () => (
+    <div data-testid="checkoutButton"></div>
+));
+
+const testCartSize = 5;
+
+const testCartTracker = <CartTracker
+    cartSize={testCartSize}
+/>;
