@@ -24,3 +24,21 @@
 //                sure it has all the correct props (quantityChosen of testQuantityChosen, 
 //                indexOfQuantityChosen of testIndexOfQuantityChosen and 
 //                forQuantityChosenChange of testForQuantityChosenChange)
+
+import { render, screen } from "@testing-library/react";
+import ItemCard from "../ItemCard";
+
+jest.mock("./QuantityInput", () => ({
+    quantityChosen, indexOfQuantityChosen, forQuantityChosenChange}) => (
+        <>
+            {/* TODO: check if it is meant to be data-testid instead */}
+            <div data-test-id="quantityChosen">{quantityChosen}</div>
+            <div data-test-id="indexOfQuantityChosen">{indexOfQuantityChosen}</div>
+            <div data-test-id="forQuantityChosenChange">{forQuantityChosenChange}</div>
+        </>
+));
+
+const testItemName = "skateboard";
+const testQuantityChosen = 4;
+const testIndexOfQuantityChosen = 2;
+const forQuantityChosenChange = jest.fn();
