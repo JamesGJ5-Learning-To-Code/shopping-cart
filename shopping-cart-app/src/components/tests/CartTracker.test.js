@@ -25,6 +25,7 @@
 
 import { render, screen } from "@testing-library/react";
 import CartTracker from "../CartTracker";
+import ItemCard from "../ItemCard";
 
 jest.mock("../CartSizeDisplay", () => ({cartSize}) => (
     <div data-testid="cartSize">{cartSize}</div>
@@ -39,3 +40,13 @@ const testCartSize = 5;
 const testCartTracker = <CartTracker
     cartSize={testCartSize}
 />;
+
+describe("CartTracker component", () => {
+    describe("rendering", () => {
+        it("renders CartSizeDisplay correctly", () => {
+            render(testCartTracker);
+
+            expect(screen.getByTestId("cartSize").textContent).toBe(testCartSize.toString());
+        });
+    });
+});
