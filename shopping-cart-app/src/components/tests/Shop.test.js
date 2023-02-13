@@ -38,6 +38,7 @@ jest.mock("../ItemList", () => ({
     <>
         <div data-testid="ItemList-availableItemNames">{availableItemNames.toString()}</div>
         <div data-testid="ItemList-allQuantitiesChosen">{allQuantitiesChosen.toString()}</div>
+        <div data-testid="ItemList-forQuantityChosenChange">{forQuantityChosenChange.name}</div>
     </>
 ));
 
@@ -71,6 +72,20 @@ describe("Shop component", () => {
 
             expect(screen.getByTestId("CartTracker-cartSize").textContent).toBe(
                 testInitialCartSize.toString()
+            );
+        });
+        it("renders ItemList with correct availableItemNames, allQuantitiesChosen and forQuantityChosenChange", () => {
+            render(testShop);
+
+            expect(screen.getByTestId("ItemList-availableItemNames").textContent).toBe(
+                testAvailableItemNames.toString()
+            );
+            expect(screen.getByTestId("ItemList-allQuantitiesChosen").textContent).toBe(
+                testAllInitialQuantitiesChosen.toString()
+            );
+            // TODO: replace the below test with a more robust solution
+            expect(screen.getByTestId("ItemList-forQuantityChosenChange").textContent).toBe(
+                "modifyQuantityChosen"
             );
         });
     });
